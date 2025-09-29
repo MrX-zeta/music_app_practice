@@ -1,44 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./styles.css">
-    <script type="module" src="./main.js"></script>
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="music-player">
-            <nav>
-                <div class="circle">
-                    <span>back</span>
+    <div class="app-container">
+        
+        <div class="player-section">
+            <div class="top-nav">
+                <button class="nav-btn">←</button>
+                <button class="nav-btn">⋮</button>
+            </div>
+            
+            <div class="album-container">
+                <div class="album-art">
+                    <img id="album-image" src="https://picsum.photos/300/300" alt="Portada del álbum">
                 </div>
-                <div class="circle">
-                    <span>bars</span>
+            </div>
+            
+            <div class="info-controls-panel">
+                <div class="song-info">
+                    <div id="song-title">Blinding Lights</div>
+                    <div id="artist-name">The Weeknd</div>
                 </div>
-            </nav>
-
-            <div id="song-details">
-                <img src="./media/default_img.jpg" alt="" id="song-img">
-                <h1 id="title"></h1>
-                <h3 id="artist"></h3>
+                
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill">
+                            <div class="progress-thumb"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <button class="control-btn">⏮</button>
+                    <button class="control-btn play-btn">▶</button>
+                    <button class="control-btn">⏭</button>
+                </div>
             </div>
-
-            <div class="audio">
-                <audio controls id="media" hidden>
-                    <!--<source id="audio" src="" type="audio/mpeg">-->
-                </audio>
-                <input type="range" value="0" id="progress">
-            </div>
-
-            <div class="song-controls">
-                <span id="lastest">last</span>
-                <span id="play" class="play">play</span>
-                <span id="forward">forward</span>
-            </div>
-
         </div>
+        
+        <div class="playlist-section">
+            <div class="playlist-header">
+                <h2 class="playlist-title">Lista de Reproducción</h2>
+                <button class="playlist-options">⋮</button>
+            </div>
+            
+            <div class="songs-list">
+                <div class="song-item active">
+                    <div class="song-number">1</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=1" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Blinding Lights</div>
+                        <div class="song-artist-item">The Weeknd</div>
+                    </div>
+                    <div class="song-duration">3:20</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">2</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=2" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Watermelon Sugar</div>
+                        <div class="song-artist-item">Harry Styles</div>
+                    </div>
+                    <div class="song-duration">2:54</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">3</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=3" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Levitating</div>
+                        <div class="song-artist-item">Dua Lipa</div>
+                    </div>
+                    <div class="song-duration">3:23</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">4</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=4" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Save Your Tears</div>
+                        <div class="song-artist-item">The Weeknd</div>
+                    </div>
+                    <div class="song-duration">3:35</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">5</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=5" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Good 4 U</div>
+                        <div class="song-artist-item">Olivia Rodrigo</div>
+                    </div>
+                    <div class="song-duration">2:58</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">6</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=6" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Peaches</div>
+                        <div class="song-artist-item">Justin Bieber</div>
+                    </div>
+                    <div class="song-duration">3:18</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">7</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=7" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Stay</div>
+                        <div class="song-artist-item">The Kid LAROI</div>
+                    </div>
+                    <div class="song-duration">2:21</div>
+                </div>
+                
+                <div class="song-item">
+                    <div class="song-number">8</div>
+                    <div class="song-cover">
+                        <img src="https://picsum.photos/40/40?random=8" alt="Portada">
+                    </div>
+                    <div class="song-info-item">
+                        <div class="song-title-item">Industry Baby</div>
+                        <div class="song-artist-item">Lil Nas X</div>
+                    </div>
+                    <div class="song-duration">3:32</div>
+                </div>
+            </div>
+        </div>
+        
     </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>
